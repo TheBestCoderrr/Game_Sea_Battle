@@ -4,8 +4,8 @@
 
 using namespace std;
 //‘ункц≥њ €к≥ прпиймають координати гравц€ та перев≥р€ють чи вони правильн≥
-int SetRow() {
-	int RowPlayer;
+short int SetRow() {
+	short int RowPlayer;
 	while (true) {
 		cout << "Enter Row (1, " << SIZEBOARD << "): ";
 		cin >> RowPlayer;

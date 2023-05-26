@@ -2,12 +2,12 @@
 
 using namespace std;
 //Перевірка чи попав гравець чи ні
-bool HitOrMiss(char Board[SIZEBOARD][SIZEBOARD], int RowPlayer, int ColPlayer) {
+bool HitOrMiss(char Board[SIZEBOARD][SIZEBOARD],short int RowPlayer,short int ColPlayer) {
 	return Board[RowPlayer][ColPlayer] == 'O' ? true : false;
 }
 
 //Перепірка чи горизонтальй або вертикальний корабель або одиничка
-short int VerticalOrGorisontalShip(char BoardShip[SIZEBOARD][SIZEBOARD], int RowPlayer, int ColPlayer) {
+short int VerticalOrGorisontalShip(char BoardShip[SIZEBOARD][SIZEBOARD],short int RowPlayer,short int ColPlayer) {
 	if (BoardShip[RowPlayer][ColPlayer + 1] == 'O' && ColPlayer + 1 < SIZEBOARD)
 		return 2;
 	if (BoardShip[RowPlayer][ColPlayer - 1] == 'O' && ColPlayer - 1 >= 0)
@@ -20,18 +20,18 @@ short int VerticalOrGorisontalShip(char BoardShip[SIZEBOARD][SIZEBOARD], int Row
 }
 
 //Перевірка чи потоплений корабель
-bool IsSunkenShip(char BoardPlayer[SIZEBOARD][SIZEBOARD], char BoardShip[SIZEBOARD][SIZEBOARD], int RowPlayer, int ColPlayer) {
+bool IsSunkenShip(char BoardPlayer[SIZEBOARD][SIZEBOARD], char BoardShip[SIZEBOARD][SIZEBOARD],short int RowPlayer,short int ColPlayer) {
 	bool Symbol1 = true, Symbol2 = true;
 	//Перевірка чи потоплений горизонтальний корабель
 	if (VerticalOrGorisontalShip(BoardShip, RowPlayer, ColPlayer) == 2) {
-		for (int n = 1; Symbol1 == true; n++) {
+		for (short int n = 1; Symbol1 == true; n++) {
 			if (BoardShip[RowPlayer][ColPlayer + n] == 'O' && BoardPlayer[RowPlayer][ColPlayer + n] != 'X' && ColPlayer + n < SIZEBOARD)
 				return false;
 			if (BoardShip[RowPlayer][ColPlayer + n] != 'O')
 				Symbol1 = false;
 		}
 
-		for (int n = 1; Symbol2 == true; n++) {
+		for (short int n = 1; Symbol2 == true; n++) {
 			if (BoardShip[RowPlayer][ColPlayer - n] == 'O' && BoardPlayer[RowPlayer][ColPlayer - n] != 'X' && ColPlayer - n >= 0)
 				return false;
 			if (BoardShip[RowPlayer][ColPlayer - n] != 'O')
@@ -41,14 +41,14 @@ bool IsSunkenShip(char BoardPlayer[SIZEBOARD][SIZEBOARD], char BoardShip[SIZEBOA
 	}
 	//Перевірка чи потоплений вертикальний корабель
 	else if (VerticalOrGorisontalShip(BoardShip, RowPlayer, ColPlayer) == 3) {
-		for (int n = 1; Symbol1 == true; n++) {
+		for (short int n = 1; Symbol1 == true; n++) {
 			if (BoardShip[RowPlayer + n][ColPlayer] == 'O' && BoardPlayer[RowPlayer + n][ColPlayer] != 'X' && RowPlayer + n < SIZEBOARD)
 				return false;
 			if (BoardShip[RowPlayer + n][ColPlayer] != 'O')
 				Symbol1 = false;
 		}
 
-		for (int n = 1; Symbol2 == true; n++) {
+		for (short int n = 1; Symbol2 == true; n++) {
 			if (BoardShip[RowPlayer - n][ColPlayer] == 'O' && BoardPlayer[RowPlayer - n][ColPlayer] != 'X' && RowPlayer - n >= 0)
 				return false;
 			if (BoardShip[RowPlayer - n][ColPlayer] != 'O')
@@ -62,12 +62,12 @@ bool IsSunkenShip(char BoardPlayer[SIZEBOARD][SIZEBOARD], char BoardShip[SIZEBOA
 }
 
 //Фарбування пошкодженого корабля в потоплений та фарбування наколо нього знаку '!'
-void FarbSunkenShip(char BoardPlayer[SIZEBOARD][SIZEBOARD], char BoardShip[SIZEBOARD][SIZEBOARD], int RowPlayer, int ColPlayer) {
+void FarbSunkenShip(char BoardPlayer[SIZEBOARD][SIZEBOARD], char BoardShip[SIZEBOARD][SIZEBOARD],short int RowPlayer,short int ColPlayer) {
 	bool Symbol1 = true, Symbol2 = true;
 
 	//Фарбування горизонтального корабля
 	if (VerticalOrGorisontalShip(BoardShip, RowPlayer, ColPlayer) == 2) {
-		for (int i = 0; Symbol1 == true; i++) {
+		for (short int i = 0; Symbol1 == true; i++) {
 			if (RowPlayer - 1 >= 0 && ColPlayer + i < SIZEBOARD)
 				BoardPlayer[RowPlayer - 1][ColPlayer + i] = '!';
 			if (RowPlayer + 1 <  SIZEBOARD && ColPlayer + i < SIZEBOARD)
@@ -81,7 +81,7 @@ void FarbSunkenShip(char BoardPlayer[SIZEBOARD][SIZEBOARD], char BoardShip[SIZEB
 			}
 		}
 		
-		for (int i = 1; Symbol2 == true; i++) {
+		for (short int i = 1; Symbol2 == true; i++) {
 			if (RowPlayer - 1 >= 0 && ColPlayer - i >= 0)
 				BoardPlayer[RowPlayer - 1][ColPlayer - i] = '!';
 			if (RowPlayer + 1 <  SIZEBOARD && ColPlayer - i >= 0)
@@ -97,7 +97,7 @@ void FarbSunkenShip(char BoardPlayer[SIZEBOARD][SIZEBOARD], char BoardShip[SIZEB
 	}
 	//Фарбування вертикального корабля
 	else if (VerticalOrGorisontalShip(BoardShip, RowPlayer, ColPlayer) == 3) {
-		for (int i = 0; Symbol1 == true; i++) {
+		for (short int i = 0; Symbol1 == true; i++) {
 			if (ColPlayer - 1 >= 0 && RowPlayer + i < SIZEBOARD)
 				BoardPlayer[RowPlayer + i][ColPlayer - 1] = '!';
 			if (ColPlayer + 1 < SIZEBOARD && RowPlayer + i < SIZEBOARD)
@@ -111,7 +111,7 @@ void FarbSunkenShip(char BoardPlayer[SIZEBOARD][SIZEBOARD], char BoardShip[SIZEB
 			}
 		}
 		
-		for (int i = 1; Symbol2 == true; i++) {
+		for (short int i = 1; Symbol2 == true; i++) {
 			if (ColPlayer - 1 >= 0 && RowPlayer - i >= 0)
 				BoardPlayer[RowPlayer - i][ColPlayer - 1] = '!';
 			if (ColPlayer + 1 < SIZEBOARD && RowPlayer - i >= 0)
@@ -127,7 +127,7 @@ void FarbSunkenShip(char BoardPlayer[SIZEBOARD][SIZEBOARD], char BoardShip[SIZEB
 	}
 	//Фарбування одинички
 	else {
-		for (int i = 1; i > -2 ; i--) {
+		for (short int i = 1; i > -2 ; i--) {
 			if (RowPlayer - i >= 0 && RowPlayer - i < SIZEBOARD) {
 				for (int j = 1; j > -2; j--) {
 					if (ColPlayer - j >= 0 && ColPlayer - j < SIZEBOARD)
@@ -142,7 +142,7 @@ void FarbSunkenShip(char BoardPlayer[SIZEBOARD][SIZEBOARD], char BoardShip[SIZEB
 
 }
 
-void ChangeSymbolInCell(char BoardPlayer[SIZEBOARD][SIZEBOARD], char BoardShip[SIZEBOARD][SIZEBOARD], int RowPlayer, int ColPlayer) {
+void ChangeSymbolInCell(char BoardPlayer[SIZEBOARD][SIZEBOARD], char BoardShip[SIZEBOARD][SIZEBOARD],short int RowPlayer,short int ColPlayer) {
 	//Якшо не попав то знак Miss
 	if (HitOrMiss(BoardShip, RowPlayer, ColPlayer) == false)
 		BoardPlayer[RowPlayer][ColPlayer] = '!';

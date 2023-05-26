@@ -15,14 +15,14 @@ int main() {
 	char BoardPlayer1[SIZEBOARD][SIZEBOARD], BoardPlayer2[SIZEBOARD][SIZEBOARD];
 	char BoardShipsPlayer1[SIZEBOARD][SIZEBOARD], BoardShipsPlayer2[SIZEBOARD][SIZEBOARD];
 
-	int RowPlayer1 = 0, RowPlayer2 = 0;
+	short int RowPlayer1 = 0, RowPlayer2 = 0;
 	char ColPlayer1 = 0, ColPlayer2 = 0;
 
-	int ColPlayer1Index = 0, ColPlayer2Index = 0;
+	short int ColPlayer1Index = 0, ColPlayer2Index = 0;
 
-	int CountSunkenCellPlayer1 = 0, CountSunkenCellPlayer2 = 0;
+	short int CountSunkenCellPlayer1 = 0, CountSunkenCellPlayer2 = 0;
 
-	int choice;
+	short int choice;
 
 	do {
 		ShowMenu();

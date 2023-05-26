@@ -2,6 +2,6 @@
 
 #define SIZEBOARD 10
 
-int SetRow();
+short int SetRow();
 
 char SetCol();
