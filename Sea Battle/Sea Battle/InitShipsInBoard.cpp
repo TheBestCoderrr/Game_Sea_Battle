@@ -183,9 +183,9 @@ void CreateDoubleShip(char arr[SIZEBOARD][SIZEBOARD], int x, int y, int y1, int 
 	{
 		for (int j = x1 - 1; j <= x1 + 1; j++)
 		{
-			if (i == -1 || j == -1)
+			if (i <= -1 || j <= -1)
 				continue;
-			if (i == SIZEBOARD || j == SIZEBOARD)
+			if (i >= SIZEBOARD || j >= SIZEBOARD)
 				continue;
 			if (i == y && j == x)
 				continue;
@@ -205,9 +205,9 @@ void CreateSingleShip(char arr[SIZEBOARD][SIZEBOARD], int x, int y)
 	{
 		for (int j = x - 1; j <= x + 1; j++)
 		{
-			if (i == -1 || j == -1)
+			if (i <= -1 || j <= -1)
 				continue;
-			if (i == SIZEBOARD || j == SIZEBOARD)
+			if (i >= SIZEBOARD || j >= SIZEBOARD)
 				continue;
 			if (i == y && j == x)
 				continue;
