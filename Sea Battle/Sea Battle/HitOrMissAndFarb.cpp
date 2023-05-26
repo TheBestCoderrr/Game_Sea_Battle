@@ -146,7 +146,7 @@ void ChangeSymbolInCell(char BoardPlayer[SIZEBOARD][SIZEBOARD], char BoardShip[S
 	//якшо не попав то знак Miss
 	if (HitOrMiss(BoardShip, RowPlayer, ColPlayer) == false)
 		BoardPlayer[RowPlayer][ColPlayer] = '!';
-	//≤наше попав та перев≥рка чи потоплений корабель
+	//≤наше попав то перев≥рка чи потоплений корабель
 	else {
 		BoardPlayer[RowPlayer][ColPlayer] = 'X';
 		if (IsSunkenShip(BoardPlayer, BoardShip, RowPlayer, ColPlayer))

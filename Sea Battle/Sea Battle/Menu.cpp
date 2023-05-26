@@ -42,9 +42,9 @@ void StartGame(char BoardPlayer1[SIZEBOARD][SIZEBOARD],char BoardPlayer2[SIZEBOA
 
 	while (true) {
 		while (true) {
-			cout << "Player 1" << endl;
-			RowPlayer1 = SetRow();
+			cout << "Player 1 enter coordinate" << endl;
 			ColPlayer1 = SetCol();
+			RowPlayer1 = SetRow();
 
 			RowPlayer1--;
 			ColPlayer1Index = ChangeColPlayer(ColPlayer1);
@@ -61,7 +61,7 @@ void StartGame(char BoardPlayer1[SIZEBOARD][SIZEBOARD],char BoardPlayer2[SIZEBOA
 
 			CountSunkenCellPlayer2 += CountSunkenCell(BoardShipsPlayer2, RowPlayer1, ColPlayer1Index);
 
-			if (HitOrMiss(BoardShipsPlayer2, RowPlayer1, ColPlayer1Index) == false || CountSunkenCellPlayer2 == 5)
+			if (HitOrMiss(BoardShipsPlayer2, RowPlayer1, ColPlayer1Index) == false || CountSunkenCellPlayer2 == 20)
 				break;
 		}
 
@@ -73,9 +73,9 @@ void StartGame(char BoardPlayer1[SIZEBOARD][SIZEBOARD],char BoardPlayer2[SIZEBOA
 
 
 		while (true) {
-			cout << "Player 2" << endl;
-			RowPlayer2 = SetRow();
+			cout << "Player 2 enter coordinate" << endl;
 			ColPlayer2 = SetCol();
+			RowPlayer2 = SetRow();
 
 			RowPlayer2--;
 			ColPlayer2Index = ChangeColPlayer(ColPlayer2);
@@ -92,7 +92,7 @@ void StartGame(char BoardPlayer1[SIZEBOARD][SIZEBOARD],char BoardPlayer2[SIZEBOA
 
 			CountSunkenCellPlayer1 += CountSunkenCell(BoardShipsPlayer1, RowPlayer2, ColPlayer2Index);
 
-			if (HitOrMiss(BoardShipsPlayer1, RowPlayer2, ColPlayer2Index) == false || CountSunkenCellPlayer1 == 5)
+			if (HitOrMiss(BoardShipsPlayer1, RowPlayer2, ColPlayer2Index) == false || CountSunkenCellPlayer1 == 20)
 				break;
 		}
 

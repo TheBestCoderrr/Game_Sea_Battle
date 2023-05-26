@@ -10,5 +10,5 @@ short int CountSunkenCell(char BoardShip[SIZEBOARD][SIZEBOARD],short int RowPlay
 }
 //’то перший потопив вс≥ корабл≥
 bool WinnerPlayer(short int CountSunkenCell) {
-	return CountSunkenCell == 5 ? true : false;
+	return CountSunkenCell == 20 ? true : false;
 }

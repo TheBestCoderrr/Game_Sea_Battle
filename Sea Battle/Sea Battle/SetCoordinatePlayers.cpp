@@ -7,7 +7,7 @@ using namespace std;
 short int SetRow() {
 	short int RowPlayer;
 	while (true) {
-		cout << "Enter Row (1, " << SIZEBOARD << "): ";
+		cout << "Enter Number (1, " << SIZEBOARD << "): ";
 		cin >> RowPlayer;
 		if (RowPlayer > 0 && RowPlayer <= SIZEBOARD)
 			break;
@@ -20,7 +20,7 @@ short int SetRow() {
 char SetCol() {
 	char ColPlayer;
 	while (true) {
-		cout << "Enter Col (A, J): ";
+		cout << "Enter Letter (A, J): ";
 		cin >> ColPlayer;
 		if (ColPlayer >= 'A' && ColPlayer <= 'J')
 			break;

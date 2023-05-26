@@ -11,17 +11,22 @@ int main() {
 	srand(time(NULL));
 
 	cout << "\tSea Battle\n" << endl;
-
+	//Пусті поля гравців
 	char BoardPlayer1[SIZEBOARD][SIZEBOARD], BoardPlayer2[SIZEBOARD][SIZEBOARD];
+	//Поля гравців з розміщеними кораблями
 	char BoardShipsPlayer1[SIZEBOARD][SIZEBOARD], BoardShipsPlayer2[SIZEBOARD][SIZEBOARD];
 
-	short int RowPlayer1 = 0, RowPlayer2 = 0;
-	char ColPlayer1 = 0, ColPlayer2 = 0;
+	//змінні для збередення координат гравців
+	short int RowPlayer1 = NULL, RowPlayer2 = NULL;
+	char ColPlayer1 = NULL, ColPlayer2 = NULL;
 
-	short int ColPlayer1Index = 0, ColPlayer2Index = 0;
+	//Індекс для масива з буквеної координати
+	short int ColPlayer1Index = NULL, ColPlayer2Index = NULL;
 
-	short int CountSunkenCellPlayer1 = 0, CountSunkenCellPlayer2 = 0;
+	//Кількість потоплених клітинок у кораблів
+	short int CountSunkenCellPlayer1 = NULL, CountSunkenCellPlayer2 = NULL;
 
+	//Меню
 	short int choice;
 
 	do {
