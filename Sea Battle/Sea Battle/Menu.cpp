@@ -120,6 +120,6 @@ void ShowRules()
 //Вивід розробників
 void ShowDevelopers()
 {
-	cout << "\t Developers:\n 1. Mykhailo Romanovych Sydoruk;\n 2. Vitaliy Oleksandrovych Kostiukevych\n 3. Andriy Andriyowych Veselovskiy\n 4. Zdikhovsky Stanislav Yuriyovych\n 5. Maksym Olehovych Mozoluk\n 6. Savva Dmytrovych Kasyanov\n 7. Kurban Maria Andriivna\n 8. Romanuk Denis Igorovich\n" << endl;
+	cout << "\t Developers:\n 1. Mykhailo Romanovych Sydoruk - Team Leader / Farb sunken ship and znack '!' between ship / vivid game in console \n 2. Vitaliy Oleksandrovych Kostiukevych - Creator Ships in Board\n 3. Andriy Andriyowych Veselovskiy - Creator Menu and Perevirka Hit or Miss\n 4. Zdikhovsky Stanislav Yuriyovych - Vivid Board and Perevirka sunken ship\n 5. Maksym Olehovych Mozoluk - Vvod Coordinate Player\n 6. Savva Dmytrovych Kasyanov - creator of the victory condition\n 7. Kurban Maria Andriivna - Perevirka correct coordinate player\n 8. Romanuk Denis Igorovich - Tester\n" << endl;
 }
 

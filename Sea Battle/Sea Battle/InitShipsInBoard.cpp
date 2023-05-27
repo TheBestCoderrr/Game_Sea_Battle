@@ -13,7 +13,7 @@ void InitBoard(char arr[SIZEBOARD][SIZEBOARD])
 }
 
 //Створення тройного корабля
-void CreateTripleShip(char arr[SIZEBOARD][SIZEBOARD], int x, int y, int y1, int x1, int y2, int x2)
+void CreateTripleShip(char arr[SIZEBOARD][SIZEBOARD],short int x,short int y,short int y1,short int x1,short int y2,short int x2)
 {//розставлення тройного корабля
 	arr[y][x] = 'O';
 	arr[y1][x1] = 'O';
@@ -72,7 +72,8 @@ void CreateTripleShip(char arr[SIZEBOARD][SIZEBOARD], int x, int y, int y1, int 
 	}
 }
 //Створення четверного корабля
-void CreateQuaternaryShip(char arr[SIZEBOARD][SIZEBOARD], int x, int y, int y1, int x1, int y2, int x2, int y3, int x3)
+void CreateQuaternaryShip(char arr[SIZEBOARD][SIZEBOARD],short int x,short int y,short int y1,short int x1,short int y2,short int x2, 
+	short int y3,short int x3)
 {//розставлення четверного корабля
 	arr[y][x] = 'O';
 	arr[y1][x1] = 'O';
@@ -159,7 +160,7 @@ void CreateQuaternaryShip(char arr[SIZEBOARD][SIZEBOARD], int x, int y, int y1, 
 }
 
 //Створення двойного корабля
-void CreateDoubleShip(char arr[SIZEBOARD][SIZEBOARD], int x, int y, int y1, int x1)
+void CreateDoubleShip(char arr[SIZEBOARD][SIZEBOARD],short int x,short int y,short int y1,short int x1)
 {//розставлення двойного корабля
 	arr[y][x] = 'O';
 	arr[y1][x1] = 'O';
@@ -197,7 +198,7 @@ void CreateDoubleShip(char arr[SIZEBOARD][SIZEBOARD], int x, int y, int y1, int 
 }
 
 //Створення одиничного корабля
-void CreateSingleShip(char arr[SIZEBOARD][SIZEBOARD], int x, int y)
+void CreateSingleShip(char arr[SIZEBOARD][SIZEBOARD],short int x,short int y)
 {
 	arr[y][x] = 'O';
 	//Розтавлення знаків оклику навколо одиничного корабля
@@ -219,7 +220,7 @@ void CreateSingleShip(char arr[SIZEBOARD][SIZEBOARD], int x, int y)
 //функція для розставлення кораблів на полі
 void InitShipsInBoard(char arr[SIZEBOARD][SIZEBOARD])
 {
-	int x, y;
+	short int x, y;
 	//Цикл для розставлення всіх кораблів(всього їх 10)
 	for (int k = 0; k < 10; k++)
 	{
